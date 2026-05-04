@@ -10,8 +10,10 @@ from rouge_score import rouge_scorer
 import pandas as pd
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
+from huggingface_hub import login
 from peft import PeftModel
 
+login("redacted")
 
 scorer = rouge_scorer.RougeScorer(
     ['rouge1', 'rouge2', 'rougeL'],
@@ -28,7 +30,7 @@ SCISPACY_MODEL = "en_core_sci_sm"
 nlp = spacy.load(SCISPACY_MODEL)
 
 BASE_MODEL = "HuggingFaceTB/SmolLM-135M"
-ADAPTER_PATH = "../../runs/2"
+ADAPTER_PATH = "../../runs/lora-own/checkpoints/checkpoint-4400"
 
 
 def load():

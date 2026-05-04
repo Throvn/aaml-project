@@ -1,0 +1,30 @@
+{
+    "timestamp_utc": "2026-04-25T18:32:09.029683Z",
+    "parameters": {
+        "dataset_name": "test_LREC_COLING.csv",
+        "num_examples": 1000,
+        "base_model": "HuggingFaceTB/SmolLM-135M",
+        "adapter_path": "../../runs/full-2/checkpoint-74000",
+        "finetune_type": "full",
+        "max_new_tokens": 30,
+        "do_sample": false,
+        "scispacy_model": "en_core_sci_sm",
+        "device": "mps",
+        "torch_version": "2.11.0"
+    },
+    "results": {
+        "rouge1_f1": 0.4131712766158115,
+        "rouge2_f1": 0.22512199787356615,
+        "rougeL_f1": 0.35211053751701543,
+        "entity_metrics": {
+            "prec_s_u": 0.8319003968253962,
+            "prec_t_u": 0.5102035714285715,
+            "rec_t_u": 0.38703492063492007,
+            "f1_t_u": 0.41512871834048326,
+            "prec_s_nu": 0.8325551587301582,
+            "prec_t_nu": 0.5112559523809524,
+            "rec_t_nu": 0.38898214285714233,
+            "f1_t_nu": 0.4168328364446014
+        }
+    }
+}

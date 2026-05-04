@@ -1,0 +1,30 @@
+{
+    "timestamp_utc": "2026-05-02T12:55:06.562856Z",
+    "parameters": {
+        "dataset_name": "test_LREC_COLING.csv",
+        "num_examples": 1000,
+        "base_model": "HuggingFaceTB/SmolLM-135M",
+        "adapter_path": "../../runs/lora-own/checkpoints/checkpoint-14400",
+        "finetune_type": "lora",
+        "max_new_tokens": 30,
+        "do_sample": false,
+        "scispacy_model": "en_core_sci_sm",
+        "device": "mps",
+        "torch_version": "2.11.0"
+    },
+    "results": {
+        "rouge1_f1": 0.3366272467583278,
+        "rouge2_f1": 0.15806754011528037,
+        "rougeL_f1": 0.2751697307131316,
+        "entity_metrics": {
+            "prec_s_u": 0.806657539682539,
+            "prec_t_u": 0.3807353896103887,
+            "rec_t_u": 0.49350198412698354,
+            "f1_t_u": 0.41000293334116916,
+            "prec_s_nu": 0.8107724220224216,
+            "prec_t_nu": 0.3900069569319564,
+            "rec_t_nu": 0.5789234126984125,
+            "f1_t_nu": 0.44429068850825865
+        }
+    }
+}

@@ -10,7 +10,7 @@ from trl import SFTTrainer
 from peft import LoraConfig, get_peft_model
 
 # 1. Load dataset
-df = pd.read_csv("../preprocessing/cleaned/train_data.csv")
+df = pd.read_csv("../1_preprocessing/cleaned/train_CSPubSum.csv")
 assert "title" in df.columns and "text" in df.columns
 dataset = Dataset.from_pandas(df)
 
@@ -43,9 +43,14 @@ lora_config = LoraConfig(
 
 model = get_peft_model(model, lora_config)
 
+# 4. Print the summary
+model.print_trainable_parameters()
+
+raise ValueError()
+
 # 6. Training arguments
 training_args = TrainingArguments(
-    output_dir="../../runs/lora-own",
+    output_dir="./smollm-title-generator-3",
     per_device_train_batch_size=8,
     gradient_accumulation_steps=4,
     num_train_epochs=5,
@@ -77,5 +82,5 @@ trainer = SFTTrainer(
 # 8. Train
 trainer.train(resume_from_checkpoint=True)
 
-trainer.save_model("../../runs/lora-own")
-tokenizer.save_pretrained("../../runs/lora-own")
+trainer.save_model("./smollm-title-generator-3")
+tokenizer.save_pretrained("./smollm-title-generator-3")

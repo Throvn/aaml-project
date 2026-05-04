@@ -10,7 +10,7 @@ from transformers import (
 from transformers import Trainer
 
 MAX_SEQ_LENGTH = 512
-CHECKPOINT_PATH = "../../runs/fft-cspubsum"
+CHECKPOINT_PATH = "./smollm-title-generator-full"
 
 # 1. Load dataset
 df = pd.read_csv("../1_preprocessing/cleaned/train_CSPubSum.csv")
